@@ -5,6 +5,5 @@ module.exports = {
 		'<rootDir>/__test__/**/*.{test.js, spec.js}',
 		'<rootDir>/__tests__/**/*.{test.js, spec.js}'
 	],
-	testEnvironment: 'node',
-	testTimeout: 50000
+	testEnvironment: 'node'
 }

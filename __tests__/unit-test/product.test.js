@@ -36,9 +36,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.create(productCreate))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(201).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('add new product successfully').toBe(data.message)
+		expect(res._getStatusCode()).toBe(201)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('add new product successfully')
 		done()
 	})
 
@@ -54,9 +54,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.create(null))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(403).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('add new product failed').toBe(data.message)
+		expect(res._getStatusCode()).toBe(403)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('add new product failed')
 		done()
 	})
 
@@ -72,10 +72,10 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.find(productResults))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(200).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('products already to use').toBe(data.message)
-		expect(productResults).toStrictEqual(data.products)
+		expect(res._getStatusCode()).toBe(200)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('products already to use')
+		expect(data.products).toStrictEqual(productResults)
 		done()
 	})
 
@@ -91,9 +91,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.find([]))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(404).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('products is not exist').toBe(data.message)
+		expect(res._getStatusCode()).toBe(404)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('products is not exist')
 		done()
 	})
 
@@ -111,10 +111,10 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findOne(productResult))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(200).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('product already to use').toBe(data.message)
-		expect(productResult).toStrictEqual(data.product)
+		expect(res._getStatusCode()).toBe(200)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('product already to use')
+		expect(data.product).toStrictEqual(productResult)
 		done()
 	})
 
@@ -132,9 +132,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findOne(null))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(404).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('product is not exist').toBe(data.message)
+		expect(res._getStatusCode()).toBe(404)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('product is not exist')
 		done()
 	})
 
@@ -152,9 +152,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findByIdAndDelete(true))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(200).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('delete product successfully').toBe(data.message)
+		expect(res._getStatusCode()).toBe(200)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('delete product successfully')
 		done()
 	})
 
@@ -172,9 +172,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findByIdAndDelete(false))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(404).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('product is not exist or deleted from owner').toBe(data.message)
+		expect(res._getStatusCode()).toBe(404)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('product is not exist or deleted from owner')
 		done()
 	})
 
@@ -192,9 +192,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findByIdAndUpdate(true))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(200).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('update product successfully').toBe(data.message)
+		expect(res._getStatusCode()).toBe(200)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('update product successfully')
 		done()
 	})
 
@@ -212,9 +212,9 @@ describe('[Unit Testing] - Product Controller', () => {
 		expect(mockSpy).toHaveBeenCalledWith(model.findByIdAndUpdate(false))
 
 		expect(res._isEndCalled()).toBeTruthy()
-		expect(404).toBe(res._getStatusCode())
-		expect({ 'content-type': 'application/json' }).toMatchObject(res._getHeaders())
-		expect('product is not exist or deleted from owner').toBe(data.message)
+		expect(res._getStatusCode()).toBe(404)
+		expect(res._getHeaders()).toMatchObject({ 'content-type': 'application/json' })
+		expect(data.message).toBe('product is not exist or deleted from owner')
 		done()
 	})
 })
